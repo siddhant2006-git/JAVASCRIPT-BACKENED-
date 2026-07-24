@@ -1,4 +1,6 @@
 import express from "express";
+import "dotenv/config";
+
 
 const app = express();
 const jokes =
@@ -16,7 +18,7 @@ const jokes =
         "What do you call a dog that does magic tricks? A labracadabrador!",
     },
     {
-      Key:3,
+      key:3,
       title: "The Breakfast Mystery",
       content: "Why did the coffee file a police report? It got mugged!",
     },
@@ -36,7 +38,7 @@ app.get("/", (req, res) => {
   res.send("server is ready ");
 });
 
-app.get("/jokes", (req, res) => {
+app.get("/api/jokes", (req, res) => {
   res.send(jokes);
 });
 const port = process.env.PORT || 5173;
